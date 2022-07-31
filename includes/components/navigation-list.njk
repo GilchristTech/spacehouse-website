@@ -1,0 +1,5 @@
+<ul class="navlist">
+	{%- for name, href in site.navigation -%}
+	<li{% if href == "/" %} class="home"{% endif %}><a href="{{ href | url }}">{{ name }}</a></li>
+	{%- endfor -%}
+</ul>

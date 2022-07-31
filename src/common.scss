@@ -1,0 +1,65 @@
+@import "../includes/components/navburger.scss";
+@import "../includes/theme.scss";
+
+*, *::after, *::before { box-sizing: inherit; }
+
+h1,h2,h3,h4,h5,h6 {
+	@include font-heading;
+	margin: 0;
+	color: var(--text-color-heading);
+}
+
+ul {
+	margin: 0;
+	padding-left: 1em;
+}
+
+body {
+	@include font-main;
+	color: var(--text-color-main);
+
+	margin: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	&> *:where(header) {
+		display: flex;
+		user-select: none;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-between;
+		z-index: 1;
+		padding: 0.75em;
+
+		a, a:visited {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+	&> *:where(main) { flex-grow: 1; }
+
+	&> *:where(footer) {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1em;
+		padding: 1em;
+
+		.copyright {
+			p + p { font-size: 0.9em; }
+		}
+
+		nav {
+			ul {
+				list-style: none;
+				a, a:visited {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}

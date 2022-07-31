@@ -1,0 +1,7 @@
+main {
+	display: flex;
+	flex-direction: column;
+	&> *:first-child {
+		flex-grow: 1;
+	}
+}

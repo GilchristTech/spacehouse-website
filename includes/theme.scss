@@ -1,0 +1,12 @@
+@mixin font-serif { font-family: serif; }
+@mixin font-sans-serif { font-family: sans-serif; }
+
+@mixin font-main { @include font-sans-serif; }
+@mixin font-heading { @include font-main; }
+
+:root {
+	--text-color-main: #111;
+	--text-color-heading: var(--text-color-main);
+	--text-background-main: #fff;
+	--text-background-heading: #fff;
+}
