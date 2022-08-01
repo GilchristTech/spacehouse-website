@@ -11,6 +11,13 @@ stylesheet: /comic.css
 {% set next_page = collections.comic | getNextCollectionItem(comic.page) %}
 {% set last_page = collections.comic.at(-1) %}
 
+{% block head %}
+	<link rel="next"     href="{{ first_page.url }}"/>
+	<link rel="prefetch" href="{{ first_page.url }}"/>
+	<link rel="prefetch" href="{{ first_page.data.comic.image.portrait }}"/>
+	<link rel="prefetch" href="{{ first_page.data.comic.image.landscape }}"/>
+{% endblock %}
+
 {% block main %}
 	<nav class="comic-navigation">
 		{% if prev_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}

@@ -7,6 +7,11 @@
 
 {% block head %}
 	<link rel="stylesheet" href="{{ "/comic.css" | url }}">
+
+	<link rel="next"     href="{{ next_page.url }}"/>
+	<link rel="prefetch" href="{{ next_page.url }}"/>
+	<link rel="prefetch" href="{{ next_page.data.comic.image.portrait }}"/>
+	<link rel="prefetch" href="{{ next_page.data.comic.image.landscape }}"/>
 {% endblock %}
 
 {% block main %}
