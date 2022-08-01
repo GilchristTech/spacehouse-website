@@ -1,0 +1,38 @@
+{% extends "includes/base.njk" %}
+
+{% set first_page = collections.comic[0] %}
+{% set prev_page = collections.comic | getPreviousCollectionItem(page) %}
+{% set next_page = collections.comic | getNextCollectionItem(page) %}
+{% set last_page = collections.comic.at(-1) %}
+
+{% block head %}
+	<link rel="style" href="{{ "static/comic.css" | url }}">
+{% endblock %}
+
+{% block main %}
+	<nav class="page-navigation">
+		{% if prev_page %}<a class="prev" href="{{ prev_page.url | url }}">Prev</a>{% endif %}
+		{% if prev_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}
+		<h1>Page #{{ comic.index }}</h2>
+		{% if last_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
+		{% if next_page %}<a class="next" href="{{ next_page.url | url }}">Next</a>{% endif %}
+	</nav>
+
+	{% if next_page %}
+	<a href="{{ next_page.url | url }}">
+	{% endif %}
+	<img class="comic-page" src="{{ comic.image.landscape | url }}">
+	{% if next_page %}
+	</a>
+	{% endif %}
+
+	<nav class="page-navigation">
+		{% if prev_page %}<a class="prev" href="{{ prev_page.url | url }}">Prev</a>{% endif %}
+		{% if first_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}
+		<span>Page #{{ comic.index }}</span>
+		{% if last_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
+		{% if next_page %}<a class="next" href="{{ next_page.url | url }}">Next</a>{% endif %}
+	</nav>
+
+	{{ layoutContent | safe }}
+{% endblock %}

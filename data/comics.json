@@ -1,0 +1,40 @@
+{
+  "config": {
+	"landscape_dir" : "/static/comics/",
+	"portrait_dir"  : "/static/comics_portrait/",
+    "fname_format"  : "sh_%.4d.png",
+    "url_format"    : "/%s"
+  },
+
+  "comics": [
+    {"index":  1, "description_template":  "descriptions/0001.html", "transcript_template":  "transcripts/0001.html", "release_date": "2019-11-30"},
+    {"index":  2, "description_template":  "descriptions/0002.html", "transcript_template":  "transcripts/0002.html", "release_date": "2019-11-30"},
+    {"index":  3, "description_template":  "descriptions/0003.html", "transcript_template":  "transcripts/0003.html", "release_date": "2019-11-30"},
+    {"index":  4, "description_template":  "descriptions/0004.html", "transcript_template":  "transcripts/0004.html", "release_date": "2019-11-30"},
+    {"index":  5, "description_template":  "descriptions/0005.html", "transcript_template":  "transcripts/0005.html", "release_date": "2019-11-30"},
+    {"index":  6, "description_template":  "descriptions/0006.html", "transcript_template":  "transcripts/0006.html", "release_date": "2019-11-30"},
+    {"index":  7, "transcript_template":  "transcripts/7.html"},
+    {"index":  8, "transcript_template":  "transcripts/8.html"},
+    {"index":  9, "transcript_template":  "transcripts/9.html"},
+    {"index": 10, "description_template": "descriptions/10.html", "transcript_template": "transcripts/10.html"},
+    {"index": 11, "description_template": "descriptions/11.html", "transcript_template": "transcripts/11.html", "release_date": "2016-11-20"},
+    {"index": 12, "description_template": "descriptions/12.html", "transcript_template": "transcripts/12.html", "release_date": "2016-12-12"},
+    {"index": 13, "description_template": "descriptions/13.html", "transcript_template": "transcripts/13.html", "release_date": "2017-04-17"},
+    {"index": 14, "description_template": "descriptions/14.html", "transcript_template": "transcripts/14.html", "release_date": "2017-06-05"},
+    {"index": 15, "description_template": "descriptions/15.html", "transcript_template": "transcripts/15.html", "release_date": "2017-09-02"},
+    {"index": 16, "description_template": "descriptions/16.html", "transcript_template": "transcripts/16.html", "release_date": "2017-09-22"},
+    {"index": 17, "description_template": "descriptions/17.html", "transcript_template": "transcripts/17.html", "release_date": "2017-10-31"},
+    {"index": 18, "description_template": "descriptions/18.html", "transcript_template": "transcripts/18.html", "release_date": "2017-11-13"},
+    {"index": 19, "description_template": "descriptions/19.html", "transcript_template": "transcripts/19.html", "release_date": "2017-12-13"},
+    {"index": 20, "description_template": "descriptions/20.html", "transcript_template": "transcripts/20.html", "release_date": "2018-01-01"},
+    {"index": 21, "description_template": "descriptions/21.html", "transcript_template": "transcripts/21.html", "release_date": "2018-02-02"},
+    {"index": 22, "description_template": "descriptions/22.html", "transcript_template": "transcripts/22.html", "release_date": "2018-03-03"},
+    {"index": 23, "description_template": "descriptions/23.html", "transcript_template": "transcripts/23.html", "release_date": "2018-04-01"},
+    {"index": 24, "description_template": "descriptions/24.html", "transcript_template": "transcripts/24.html", "release_date": "2018-05-16"},
+    {"index": 25, "description_template": "descriptions/25.html", "transcript_template": "transcripts/25.html", "release_date": "2018-06-08"},
+    {"index": 26, "description_template": "descriptions/26.html", "transcript_template": "transcripts/26.html", "release_date": "2018-07-13"},
+    {"index": 27, "description_template": "descriptions/27.html", "transcript_template": "transcripts/27.html", "release_date": "2018-08-16"},
+    {"index": 28, "description_template": "descriptions/28.html", "transcript_template": "transcripts/28.html", "release_date": "2018-09-01"}
+  ]
+}
+

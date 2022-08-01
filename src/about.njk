@@ -7,8 +7,9 @@ stylesheet: /about.css
 {% block main %}
 	<h1>About Space House</h1>
 	<p>Space House is about a guy who lives in a house in space with influential extraterrestrial neighbours who <i>also</i> decide to live in his house. It started during 2015 as an effort for me to teach me two things: how to use the comic medium, and how to stick with one project for a long time.  New pages are released monthly.</p>
+	<a href="{{ collections.comic[0].url | url }}">Read from the start</a>
+
 	{#
-	<a href="{{ pages[0].url | url }}">Read from the start</a>
 	<a href="{{ pages.old[0].url | url }}">Read the original start of the comic, later redone.</a>
 	#}
 {% endblock %}

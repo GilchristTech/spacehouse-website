@@ -1,0 +1,16 @@
+{
+  "config": {
+	"landscape_dir" : "/static/old_intro/landscape/",
+	"portrait_dir"  : "/static/old_intro/portrait/",
+    "fname_format"  : "sh_%.4d.png",
+    "url_format"    : "/old_intro/%s"
+  },
+
+  "comics": [
+    {"index":  1, "description_template":"old_intro/descriptions/1.html", "transcript_template": "old_intro/transcripts/1.html"},
+    {"index":  2, "description_template":"old_intro/descriptions/2.html", "transcript_template": "old_intro/transcripts/2.html"},
+    {"index":  3, "description_template":"old_intro/descriptions/3.html", "transcript_template": "old_intro/transcripts/3.html"},
+    {"index":  4, "description_template":"old_intro/descriptions/4.html", "transcript_template": "old_intro/transcripts/4.html"}
+  ]
+}
+
