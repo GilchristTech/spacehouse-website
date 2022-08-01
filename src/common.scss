@@ -17,6 +17,7 @@ ul {
 body {
 	@include font-main;
 	color: var(--text-color-main);
+	background: var(--text-background-main);
 
 	margin: 0;
 	box-sizing: border-box;
@@ -39,7 +40,16 @@ body {
 		}
 	}
 
-	&> *:where(main) { flex-grow: 1; }
+	&> *:where(main) {
+		flex-grow: 1;
+
+		a {
+			color: var(--text-link-main);
+			&:visited {
+				color: var(--text-link-visited-main);
+			}
+		}
+	}
 
 	&> *:where(footer) {
 		display: flex;

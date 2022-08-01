@@ -5,8 +5,10 @@
 @mixin font-heading { @include font-main; }
 
 :root {
-	--text-color-main: #111;
+	--text-color-main: #eee;
 	--text-color-heading: var(--text-color-main);
-	--text-background-main: #fff;
-	--text-background-heading: #fff;
+	--text-link-main: #6e6;
+	--text-link-visited-main: #8e8;
+	--text-background-main: #333;
+	--text-background-heading: var(--text-background-main);
 }

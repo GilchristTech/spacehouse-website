@@ -6,33 +6,46 @@
 {% set last_page = collections.comic.at(-1) %}
 
 {% block head %}
-	<link rel="style" href="{{ "static/comic.css" | url }}">
+	<link rel="stylesheet" href="{{ "/comic.css" | url }}">
 {% endblock %}
 
 {% block main %}
-	<nav class="page-navigation">
-		{% if prev_page %}<a class="prev" href="{{ prev_page.url | url }}">Prev</a>{% endif %}
+	<nav class="comic-navigation">
 		{% if prev_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}
-		<h1>Page #{{ comic.index }}</h2>
-		{% if last_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
+		{% if prev_page %}<a class="prev" href="{{ prev_page.url | url }}">Prev</a>{% endif %}
+		<span class="index">Page #{{ comic.index }}</span>
 		{% if next_page %}<a class="next" href="{{ next_page.url | url }}">Next</a>{% endif %}
+		{% if next_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
 	</nav>
 
 	{% if next_page %}
 	<a href="{{ next_page.url | url }}">
 	{% endif %}
-	<img class="comic-page" src="{{ comic.image.landscape | url }}">
+	<picture class="comic-page">
+		<source media="(max-width: 700px) and (orientation: portrait)" srcset="{{ comic.image.portrait }}"></source>
+		<source media="(min-width: 700px) or (orientation: landscape)" srcset="{{ comic.image.landscape }}"></source>
+		<img src="{{ comic.image.landscape }}">
+	</picture>
 	{% if next_page %}
 	</a>
 	{% endif %}
 
-	<nav class="page-navigation">
+	<nav class="comic-navigation">
+		{% if prev_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}
 		{% if prev_page %}<a class="prev" href="{{ prev_page.url | url }}">Prev</a>{% endif %}
-		{% if first_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}
-		<span>Page #{{ comic.index }}</span>
-		{% if last_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
+		<h1 class="index">Page #{{ comic.index }}</h2>
 		{% if next_page %}<a class="next" href="{{ next_page.url | url }}">Next</a>{% endif %}
+		{% if next_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
 	</nav>
 
-	{{ layoutContent | safe }}
+	<section class="comic-description">
+		<h1>Page #{{ comic.index }}</h1>
+		{% if date %}
+			<p class="released">Released <time datetime="{{ date }}">{{ date }}</time></p>
+		{% endif %}
+		{% if layoutContent %}
+			<hr>
+			{{ layoutContent | safe }}
+		{% endif %}
+	</section>
 {% endblock %}
