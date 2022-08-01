@@ -4,7 +4,7 @@
   "description": "The website for the Space House comic by Gilchrist Pitts",
   "scripts": {
     "start": "NODE_ENV=development eleventy --serve",
-    "build": "NODE_ENV=production eleventy --build"
+    "build": "NODE_ENV=production eleventy"
   },
   "repository": {
     "type": "git",
