@@ -5,7 +5,6 @@ stylesheet: /comic.css
 
 {% set comic = collections.comic.at(-1).data %}
 {% set comic_description = collections.comic.at(-1).templateContent %}
-{{ comic | log }}
 
 {% set first_page = collections.comic[0] %}
 {% set prev_page = collections.comic | getPreviousCollectionItem(comic.page) %}
