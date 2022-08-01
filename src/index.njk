@@ -1,9 +1,54 @@
 ---
-stylesheet: /index.css
+stylesheet: /comic.css
 ---
 {% extends "includes/base.njk" %}
 
+{% set comic = collections.comic.at(-1).data %}
+{% set comic_description = collections.comic.at(-1).templateContent %}
+{{ comic | log }}
+
+{% set first_page = collections.comic[0] %}
+{% set prev_page = collections.comic | getPreviousCollectionItem(comic.page) %}
+{% set next_page = collections.comic | getNextCollectionItem(comic.page) %}
+{% set last_page = collections.comic.at(-1) %}
+
 {% block main %}
-	{# Show first page #}
-	{# Show first page description #}
+	<nav class="comic-navigation">
+		{% if prev_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}
+		{% if prev_page %}<a class="prev" href="{{ prev_page.url | url }}">Prev</a>{% endif %}
+		<span class="index">Page #{{ comic.comic.index }}</span>
+		{% if next_page %}<a class="next" href="{{ next_page.url | url }}">Next</a>{% endif %}
+		{% if next_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
+	</nav>
+
+	{% if next_page %}
+	<a href="{{ next_page.url | url }}">
+	{% endif %}
+	<picture class="comic-page">
+		<source media="(max-width: 700px) and (orientation: portrait)" srcset="{{ comic.comic.image.portrait }}"></source>
+		<source media="(min-width: 700px) or (orientation: landscape)" srcset="{{ comic.comic.image.landscape }}"></source>
+		<img src="{{ comic.comic.image.landscape }}">
+	</picture>
+	{% if next_page %}
+	</a>
+	{% endif %}
+
+	<nav class="comic-navigation">
+		{% if prev_page %}<a class="first" href="{{ first_page.url | url }}">First</a>{% endif %}
+		{% if prev_page %}<a class="prev" href="{{ prev_page.url | url }}">Prev</a>{% endif %}
+		<h1 class="index">Page #{{ comic.comic.index }}</h2>
+		{% if next_page %}<a class="next" href="{{ next_page.url | url }}">Next</a>{% endif %}
+		{% if next_page %}<a class="last" href="{{ last_page.url | url }}">Last</a>{% endif %}
+	</nav>
+
+	<section class="comic-description">
+		<h1>Page #{{ comic.comic.index }}</h1>
+		{% if comic.date %}
+			<p class="released">Released <time datetime="{{ comic.date }}">{{ comic.date }}</time></p>
+		{% endif %}
+		{% if comic_description %}
+			<hr>
+			{{ comic_description | safe }}
+		{% endif %}
+	</section>
 {% endblock %}
