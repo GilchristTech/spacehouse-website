@@ -17,9 +17,13 @@ ul {
 body {
 	@include font-main;
 	color: var(--text-color-main);
-	background: var(--text-background-main);
-	background: radial-gradient(var(--text-background-main) 60%, #222);
-		background-attachment: fixed;
+
+	background: #001a31;
+	background: radial-gradient(#1117 20%, #111), #001a31;
+	background: radial-gradient(#1117 20%, #111), url(/static/alex-fxrwJGMCz_g-unsplash.webp), #001a31;
+	background-size: cover;
+
+	background-attachment: fixed;
 
 	margin: 0;
 	box-sizing: border-box;
@@ -36,7 +40,9 @@ body {
 		align-items: center;
 		justify-content: space-between;
 		z-index: 1;
-		padding: 0.5em;
+		padding: 0.75em;
+
+		font-size: 1.15em;
 
 		.brand {
 			font-weight: bold;
